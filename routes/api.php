@@ -4,6 +4,8 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\client\EmpresaController;
 use App\Http\Controllers\Api\admin\EmpresaController as AdEmpresaController;
 use App\Http\Controllers\Api\FrontController;
+use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +37,8 @@ Route::prefix('v1')->group(function(){
 
         //::rol admin
         Route::apiResource('/admin/empresa', AdEmpresaController::class);
+        Route::apiResource('/admin/categoria', CategoriaController::class);
+        Route::apiResource('/admin/user', UserController::class);
     });
     
 });
